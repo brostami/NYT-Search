@@ -54,5 +54,30 @@
                     Panel content
                 </div>
         </div>
+	    
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+url += '?' + $.param({
+  'api-key': "a09a7814e78546b4b85cd9e9bc3efc88",
+  'q' : "plaza"
+  });
+
+$.ajax({
+  url: url,
+  method: 'GET',
+}).done(function(result) {
+    var retrieveVal = $("#records").val();
+    for (var i = 0; i < retrieveVal; i++){
+    console.log(result.response.docs[i]);
+    // var headline = result.response.headline.main;
+    var byline = result.response.docs[7];
+    console.log(byline);
+    $("#articles").append("<p>");
+}
+}).fail(function(err) {
+  throw err;
+});
+</script>
 </body>
 </html>
