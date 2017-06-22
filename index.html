@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	
+	<!-- Added link to the jQuery Library -->
+	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+	<!-- Added a link to stylesheets -->
+	<!--<link rel="stylesheet" type="text/css" href="assets/css/reset.css">-->
+
+	<!-- Added a link to Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron"><h1><i class="fa fa-newspaper-o" style="font-size:48px"> New York Times Search</h></i></div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Search Parameters</div>
+                <div class="panel-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="searchTerm">Search Term:</label>
+                            <input type="text" class="form-control" id="searchTerm" aria-describedby="searchTerm" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="records">Number of Records to Retrieve</label>
+                            <select class="form-control" id="records">
+                            <option>5</option>
+                            <option>10</option>
+                            <option>15</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="startYear">Start Year (Optional):</label>
+                            <input type="text" class="form-control" id="startYear" aria-describedby="startYear" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="endYear">End Year (Optional):</label>
+                            <input type="text" class="form-control" id="endYear" aria-describedby="endYear" placeholder="">
+                        </div>
+                        <input id="search" class="btn btn-primary" type="submit" value="Search" onclick="search();">
+                        <input id="clear-results" class="btn btn-primary" type="reset" value="Clear Results" onclick="reset();">
+                    </form>
+                </div>
+        </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">Top Articles</div>
+                <div id="articles" class="panel-body">
+                    Panel content
+                </div>
+        </div>
+</body>
+</html>
